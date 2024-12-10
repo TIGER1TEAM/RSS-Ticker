@@ -20,7 +20,7 @@ html, body {
   width: 100%;
   bottom: 0;
   background-color: #323232;
-  color: #ff0000;
+  color: #0000ff;
   text-align: center;
   font-size: 36px; /* Ajustez la taille de la police selon vos besoins */
   font-weight: bold; /* Rendez la police plus grasse */
@@ -46,7 +46,7 @@ html, body {
 <body>
   
 <div id="bandeau">
-  <div id="rssText">Fetching RSS News...</div>
+  <div id="rssText">Loading...</div>
 </div>
 
 <script>
@@ -54,7 +54,7 @@ let titles;
 let index = 0;
 
 function fetchRSS() {
-    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.espn.com/espn/rss/news')
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.espn.com/espn/rss/news')  //rss ideas: deafult:(https://www.espn.com/espn/rss/news) (others can be found at espn) f1:(https://www.formula1.com/content/fom-website/en/latest/all.xml) texas athetics:(http://texaslonghorns.com/rss.aspx?path=general) (more can be found at texas athletics) other rss feeds can be found and inserted in the url area.
     .then(response => response.json())
     .then(data => {
         titles = data.items.map(item => item.title); // Conserver les barres verticales dans les titres RSS
