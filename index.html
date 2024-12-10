@@ -69,8 +69,7 @@ function fetchRSS() {
     .then(data => {
         titles = data.items.map(item => item.title); // Conserver les barres verticales dans les titres RSS
         document.getElementById('rssText').innerHTML = "<p>" + titles.join('</p><p> <span class="material-symbols-outlined">
-double_arrow
-</span> </p><p>') + "</p>"; // Utiliser l'entité HTML pour le point médian comme séparateur
+double_arrow </span> </p><p>') + "</p>"; // Utiliser lentité HTML pour le point médian comme séparateur
         scrollText();
     })
     .catch(error => console.error('Error :', error));
