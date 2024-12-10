@@ -19,8 +19,8 @@ html, body {
   position: fixed;
   width: 100%;
   bottom: 0;
-  background-color: #323232;
-  color: #0000ff;
+  background-color: #0000ff;
+  color: #ffffff;
   text-align: center;
   font-size: 36px; /* Ajustez la taille de la police selon vos besoins */
   font-weight: bold; /* Rendez la police plus grasse */
