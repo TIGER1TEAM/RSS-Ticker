@@ -41,7 +41,7 @@ html, body {
 </style>
 </head>
 <body>
-
+  
 <div id="bandeau">
   <div id="rssText">Fetching RSS News...</div>
 </div>
@@ -49,7 +49,6 @@ html, body {
 <script>
 let titles;
 let index = 0;
-  setTimeout(fetchRSS, 6000)
 
 function fetchRSS() {
     fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.espn.com/espn/rss/news')
