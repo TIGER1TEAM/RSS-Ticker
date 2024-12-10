@@ -77,7 +77,7 @@ function scrollText() {
     let pos = screenWidth;
 
     function animate() {
-        pos -= 3; // Vous pouvez ajuster la vitesse en modifiant cette valeur
+        pos -= 2; // Vous pouvez ajuster la vitesse en modifiant cette valeur
         element.style.transform = 'translateX(' + pos + 'px)';
         if (pos < -textWidth + screenWidth) {
             pos = screenWidth;
