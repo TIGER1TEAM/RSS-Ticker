@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Iceberg&family=Jersey+10&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=VT323&display=swap" rel="stylesheet">
+  
 <style>
 html, body {
   margin: 0;
   padding: 0;
 }
 
+
+
 #bandeau {
   position: fixed;
   width: 100%;
   bottom: 0;
-  background-color: grey;
-  color: white;
+  background-color: #323232;
+  color: #ff0000;
   text-align: center;
   font-size: 36px; /* Ajustez la taille de la police selon vos besoins */
   font-weight: bold; /* Rendez la police plus grasse */
   white-space: nowrap;
   overflow: hidden;
   line-height: 1.5; /* Ajustez la hauteur de ligne à 1.5 pour augmenter l'espace vertical entre les lignes */
-  font-family: Arial, sans-serif; /* Changez la famille de polices selon vos préférences */
+  font-family: 'Iceberg', serif; /* Changez la famille de polices selon vos préférences */
   margin-left: 0; /* Ajustez la marge gauche à 0 pixels pour éliminer l'espace vide */
 }
 
@@ -36,9 +44,9 @@ html, body {
 </style>
 </head>
 <body>
-
+  
 <div id="bandeau">
-  <div id="rssText">Chargement du flux RSS en cours...</div>
+  <div id="rssText">Fetching RSS News...</div>
 </div>
 
 <script>
@@ -50,7 +58,7 @@ function fetchRSS() {
     .then(response => response.json())
     .then(data => {
         titles = data.items.map(item => item.title); // Conserver les barres verticales dans les titres RSS
-        document.getElementById('rssText').innerHTML = "<p>" + titles.join('</p><p> &#8226; </p><p>') + "</p>"; // Utiliser l'entité HTML pour le point médian comme séparateur
+        document.getElementById('rssText').innerHTML = "<p>" + titles.join('</p><p> &#10095; </p><p>') + "</p>"; // Utiliser lentité HTML pour le point médian comme séparateur
         scrollText();
     })
     .catch(error => console.error('Error :', error));
