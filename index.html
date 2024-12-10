@@ -2,6 +2,9 @@
 <html>
 <head>
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=double_arrow" />
+  
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
@@ -10,6 +13,16 @@
 html, body {
   margin: 0;
   padding: 0;
+}
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
 }
 
 #bandeau {
@@ -55,7 +68,7 @@ function fetchRSS() {
     .then(response => response.json())
     .then(data => {
         titles = data.items.map(item => item.title); // Conserver les barres verticales dans les titres RSS
-        document.getElementById('rssText').innerHTML = "<p>" + titles.join('</p><p> &#8226; </p><p>') + "</p>"; // Utiliser l'entité HTML pour le point médian comme séparateur
+        document.getElementById('rssText').innerHTML = "<p>" + titles.join('</p><p> ea50; </p><p>') + "</p>"; // Utiliser l'entité HTML pour le point médian comme séparateur
         scrollText();
     })
     .catch(error => console.error('Error :', error));
