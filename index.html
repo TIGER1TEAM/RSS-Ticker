@@ -27,7 +27,7 @@ html, body {
   white-space: nowrap;
   overflow: hidden;
   line-height: 1.5; /* Ajustez la hauteur de ligne à 1.5 pour augmenter l'espace vertical entre les lignes */
-  font-family: 'Iceberg', serif; /* Changez la famille de polices selon vos préférences */
+  font-family: 'Doto', serif; /* Changez la famille de polices selon vos préférences */
   margin-left: 0; /* Ajustez la marge gauche à 0 pixels pour éliminer l'espace vide */
 }
 
@@ -58,7 +58,7 @@ function fetchRSS() {
     .then(response => response.json())
     .then(data => {
         titles = data.items.map(item => item.title); // Conserver les barres verticales dans les titres RSS
-        document.getElementById('rssText').innerHTML = "<p>" + titles.join('</p><p> &#10095; </p><p>') + "</p>"; // Utiliser lentité HTML pour le point médian comme séparateur
+        document.getElementById('rssText').innerHTML = "<p>" + titles.join('</p><p> &#10095;  &#10094; </p><p>') + "</p>"; // Utiliser lentité HTML pour le point médian comme séparateur
         scrollText();
     })
     .catch(error => console.error('Error :', error));
