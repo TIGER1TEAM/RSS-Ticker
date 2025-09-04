@@ -30,34 +30,35 @@ html, body {
 
 #rssText {
   position: relative;
+  width: 100%;
   height: 100%;
+  display: flex;               /* flexbox to center text */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 #rssText p {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 100%); /* start off-screen at bottom */
-  
-  width: 100%;            /* take full banner width */
   margin: 0;
-  padding: 0 20px;        /* padding so text isn't glued to edges */
-  text-align: center;     /* center text */
+  padding: 0 20px;
+  max-width: 100%;             /* don’t shrink into a column */
+  text-align: center;
   
   opacity: 0;
+  transform: translateY(100%); /* start off bottom */
   transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-  white-space: normal;    /* allow wrapping */
-  word-wrap: break-word;  /* break long words if needed */
-}
 
+  white-space: normal;         /* allow wrapping naturally */
+  word-break: break-word;      /* break long words if needed */
+}
 #rssText p.active {
   opacity: 1;
-  transform: translate(-50%, -50%); /* centered */
+  transform: translateY(0);    /* slide up into place */
 }
-
 #rssText p.exit {
   opacity: 0;
-  transform: translate(-50%, -150%); /* slide out top */
+  transform: translateY(-100%); /* slide up and out */
 }
 </style>
 </head>
