@@ -65,7 +65,7 @@ let index = 0;
 let interval;
 
 function fetchRSS() {
-  fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.espn.com/espn/rss/ncf/news')
+  fetch('https://api.rss2json.com/v1/api.json?rss_url=https://tiger1team.github.io/RSS-gametime/rss.xml')
     .then(response => response.json())
     .then(data => {
       titles = data.items.map(item => item.title);
