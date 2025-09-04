@@ -74,14 +74,21 @@ let index = 0;
 let interval;
 
 function fetchRSS() {
-  fetch('https://api.rss2json.com/v1/api.json?rss_url=https://tiger1team.github.io/RSS-gametime/rss.xml')
+  const rssURL = 'https://tiger1team.github.io/RSS-gametime/rss.xml';
+  const cacheBuster = `&_=${new Date().getTime()}`; // adds current timestamp
+  fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssURL)}${cacheBuster}`)
     .then(response => response.json())
     .then(data => {
       titles = data.items.map(item => item.title);
       index = 0;
+
+      const container = document.getElementById('rssText');
+      container.innerHTML = ""; // clear old title
+
       showNext();
+
       if (interval) clearInterval(interval);
-      interval = setInterval(showNext, 4000); // change every 4s
+      interval = setInterval(showNext, 4000);
     })
     .catch(error => console.error('Error :', error));
 }
