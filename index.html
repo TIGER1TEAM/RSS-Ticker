@@ -74,7 +74,7 @@ let index = 0;
 let interval;
 
 function fetchRSS() {
-  const rssURL = 'https://www.espn.com/espn/rss/ncf/news';
+  const rssURL = 'https://tiger1team.github.io/RSS-gametime/rss.xml';
   const cacheBuster = `&_=${new Date().getTime()}`; // adds current timestamp
   fetch(`https://api.rss2json.com/v1/api.json?rss_url=${rssURL}&_=${Date.now()}`)
     .then(response => response.json())
@@ -109,7 +109,7 @@ function showNext() {
   // prepare exit animation
   setTimeout(() => {
     p.classList.add('exit');
-  }, 3000);
+  }, 5000);
 
   index = (index + 1) % titles.length;
 }
