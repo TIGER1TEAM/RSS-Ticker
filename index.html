@@ -86,7 +86,7 @@ function showNext() {
   container.innerHTML = ""; // clear old
 
   const p = document.createElement('p');
-  p.textContent = titles[index];
+  p.textContent = titles[index].replace(/\s+/g, ' ');
   container.appendChild(p);
 
   // Trigger reflow for animation
