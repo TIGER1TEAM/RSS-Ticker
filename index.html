@@ -109,14 +109,14 @@ function showNext() {
   // prepare exit animation
   setTimeout(() => {
     p.classList.add('exit');
-  }, 5000);
+  }, 6000);
 
   index = (index + 1) % titles.length;
 }
 
 window.addEventListener('load', () => {
   fetchRSS();
-  setInterval(fetchRSS, 300000); // refresh feed every 10 minutes
+  setInterval(fetchRSS, 900000); // refresh feed every 10 minutes
 });
 </script>
 
